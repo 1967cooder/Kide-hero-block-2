@@ -1,0 +1,108 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-create-block-hero-block {
+// 	background-color: #21759b;
+// 	color: #fff;
+// 	padding: 2px;
+// }
+
+.is-layout-constrained
+	> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: 100% !important;
+}
+//
+
+// // ===== HERO BLOCK CONTAINER =====
+// .hero-block {
+// 	position: relative;
+// 	display: flex;
+// 	align-items: stretch;
+// 	min-height: 500px;
+// 	background-color: #d9e2e5;
+// 	overflow: hidden;
+// }
+
+// /* ===== BACKGROUND ===== */
+// .hero-block-background {
+// 	background-color: #236165;
+// 	background-image: url(http://wordpress-with-react-custom-blocks.local/wp-content/uploads/2026/01/kide-logo.svg);
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	width: 55%;
+// 	height: 88%;
+// 	display: grid;
+// 	flex-grow: 1;
+// 	grid-template-areas:
+// 		"kuva kuva kuva"
+// 		"kuva kuva kuva";
+// 	grid-template-columns: repeat(3, 1fr);
+// 	grid-template-rows: repeat(2, 1fr);
+// 	gap: 1rem;
+// 	padding: 2rem;
+// 	z-index: 1;
+// }
+
+// .hero-block-background img {
+// 	width: 100%;
+// 	height: 100%;
+// 	object-fit: cover;
+// 	// border-radius: 6px;
+// }
+
+// /* ===== FOREGROUND ===== */
+// .hero-block-foreground {
+// 	position: relative;
+// 	z-index: 2;
+// 	width: 45%;
+// 	padding: 3rem;
+// }
+
+// .hero-block-foreground img {
+// 	max-width: 100%;// make sure images don't overflow their container
+// 	height: auto;
+// 	display: block;// make sure images are responsive
+// }
+.hero-block {
+	display: block;
+}
+.hero-block-foreground {
+	display: block;
+	margin-block-start: 3rem;
+	margin-block-end: 3rem;
+	z-index: 1;
+	margin-inline-end: -10rem; //sama kuin margin: right;
+}
+.hero-block-foreground img {
+	max-width: 100%;
+}
+.hero-block-background {
+	display: block;
+	background-color: #246165;
+	margin-inline-start: -5rem; //sama kuin margin: left;
+}
+.hero-block-background img {
+	max-width: 100%;
+	display: none;
+}
+/* elementit foreground ja background rinnakkain*/
+/* lasten vanhempi hero-block*/
+.hero-block,
+.hero-block-preview {
+	//editorissa näkee myös kuvat
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap; //lapset pysyvät samalla rivillä
+	background-color: #ddecec;
+}
+/*lapset foreground ja background*/
+.hero-block > *,
+.hero-block-preview > * {
+	flex-basis: 0; //lasten minimileveys
+	flex-grow: 1; //jos molemmissa lapsissa sama arvo => lapset yhtä leveitä
+}
